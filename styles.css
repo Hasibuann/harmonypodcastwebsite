@@ -1,0 +1,783 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header */
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+	margin-top: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+	margin-right: 50px;
+}
+.nav-links.active { display: flex; }
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #04bd0dbe; /* Slightly lighter shade */
+}
+
+.nav-links .btn-subscribe {
+    background-color: #ffffff;
+    color: #1DB954;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links .btn-subscribe:hover {
+    background-color: #c9fbd9;
+    color: #ffffff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #1DB954;
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+/* Main Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.content {
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 3rem;
+    color: #00ff00;
+}
+
+.content p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+
+.buttons button {
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #00cc00;
+}
+
+.image {
+    max-width: 40%;
+    flex-shrink: 0;
+}
+/* Photo Gallery Section */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Empat foto per baris */
+    grid-template-rows: repeat(2, 1fr); /* Dua baris */
+    width: 500px; /* Pastikan galeri memenuhi container */
+    height: 400px; /* Tinggi total untuk dua baris */
+    gap: 0; /* Tidak ada jarak antar gambar */
+    overflow: hidden; /* Pastikan elemen tetap dalam kotak */
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar mengisi kotak tanpa distorsi */
+    display: block;
+}
+
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Audio Player */
+.audio-player {
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.audio-player button {
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.waveform {
+    flex: 1;
+    margin: 0 20px;
+    height: 50px;
+    background: url('waveform-placeholder.png') repeat-x;
+    background-size: contain;
+}
+
+/* Latest Episodes */
+.latest-episodes {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.latest-episodes h2 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.episode-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.episode-card {
+    background-color: #111;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.episode-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.episode-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.episode-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.episode-card .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.load-more {
+    text-align: center;
+    margin: 20px;
+}
+
+.load-more button {
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.load-more button:hover {
+    background-color: #00cc00;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #111;
+    flex-wrap: wrap;
+}
+
+.about-section .about-content {
+    max-width: 50%;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #00ff00;
+}
+
+.about-section p {
+    font-size: 1rem;
+    margin: 20px 0;
+}
+
+.about-section button {
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.about-section button:hover {
+    background-color: #00cc00;
+}
+
+/* Featured Episodes */
+.featured-episodes {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.player {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.player-header img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.episode-info h2 {
+    font-size: 1.5rem;
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.controls .waveform {
+    background-color: #00ff00;
+    height: 4px;
+    width: 200px;
+}
+
+.episode-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.episode-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #333;
+    cursor: pointer;
+}
+
+.episode-list li:hover {
+    background-color: #222;
+}
+
+.episode-list li.active {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Subscribe Section */
+.subscribe-section {
+    background-color: #111;
+    text-align: center;
+    padding: 50px;
+}
+
+.subscribe-section h2 {
+    font-size: 2rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.subscribe-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.subscribe-section button {
+    background-color: #00ff00;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.subscribe-section button:hover {
+    background-color: #00cc00;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #0af;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding: 30px;
+        flex-direction: column; /* Mengubah tata letak menjadi kolom */
+        align-items: center; /* Pusatkan konten */
+    }
+
+    .content {
+        max-width: 100%; /* Membuat konten mengambil lebar penuh */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .image {
+        max-width: 80%; /* Membuat gambar lebih kecil */
+        margin-top: 20px; /* Menambahkan jarak atas */
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr); /* Mengubah menjadi tiga kolom */
+    }
+
+    .episode-card {
+        width: calc(33.33% - 20px); /* Membuat setiap kartu mengambil sepertiga lebar dengan sedikit jarak */
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        padding: 20px; /* Mengurangi padding */
+    }
+
+    .content {
+        max-width: 100%; /* Membuat konten mengambil lebar penuh */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .image {
+        max-width: 80%; /* Membuat gambar lebih kecil */
+        margin-top: 20px; /* Menambahkan jarak atas */
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mengubah menjadi dua kolom */
+    }
+
+    .episode-card {
+        width: calc(50% - 20px); /* Membuat setiap kartu mengambil setengah lebar dengan sedikit jarak */
+    }
+
+    .about-section {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .about-section .about-content {
+        max-width: 100%; /* Membuat konten mengambil lebar penuh */
+        margin-bottom: 20px; /* Menambahkan jarak antara konten dan gambar */
+    }
+
+    .about-section .about-image {
+        max-width: 80%; /* Membuat gambar tentang lebih kecil */
+        margin: 0 auto; /* Pusatkan gambar */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    header.navbar {
+        padding: 10px 15px; /* Sedikit mengurangi padding */
+    }
+
+    header .logo img {
+        width: 80px; /* Sedikit memperkecil logo */
+    }
+
+    .nav-links {
+        top: 50px; /* Menyesuaikan posisi dropdown menu */
+        right: 15px; /* Sedikit mengurangi jarak dari kanan */
+        padding: 10px 15px; /* Sedikit mengurangi padding */
+    }
+
+    /* Hero Section */
+    .container.hero-section {
+        padding: 30px 15px; /* Mengurangi padding */
+        flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .container.hero-section .content {
+        max-width: 100%; /* Membuat konten mengambil lebar penuh */
+        margin-bottom: 30px; /* Menambahkan jarak antara konten dan gambar */
+    }
+
+    .container.hero-section .image {
+        max-width: 100%; /* Membuat gambar mengambil lebar penuh */
+    }
+
+    /* Galeri Foto di Hero Section */
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mengubah menjadi dua kolom */
+        grid-template-rows: auto; /* Tinggi baris menyesuaikan konten */
+        width: 100%; /* Memastikan galeri mengambil lebar penuh */
+        height: auto; /* Tinggi menyesuaikan konten */
+    }
+
+    /* Episode Terbaru */
+    .latest-episodes {
+        padding: 30px 15px; /* Mengurangi padding */
+    }
+
+    .episode-cards {
+        justify-content: center; /* Tetap pusatkan kartu episode */
+    }
+
+    .episode-card {
+        width: calc(50% - 10px); /* Membuat setiap kartu mengambil setengah lebar dengan sedikit jarak */
+        margin-bottom: 20px; /* Menambahkan jarak antar kartu */
+    }
+
+    /* Memastikan kartu episode tidak terlalu kecil jika hanya ada satu */
+    .episode-cards > .episode-card:only-child {
+        width: 100%;
+    }
+
+    /* Tentang Section */
+    .about-section {
+        padding: 30px 15px; /* Mengurangi padding */
+        flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .about-section .about-content {
+        max-width: 100%; /* Membuat konten mengambil lebar penuh */
+        margin-bottom: 30px; /* Menambahkan jarak antara konten dan gambar */
+    }
+
+    .about-section .about-image {
+        max-width: 80%; /* Sedikit mengurangi ukuran gambar tentang */
+        margin: 0 auto; /* Pusatkan gambar */
+    }
+    .player-header img {
+        margin-right: 0; /* Hapus margin kanan pada gambar */
+        margin-bottom: 15px; /* Tambahkan margin bawah untuk spasi */
+        width: 80px; /* Sesuaikan ukuran gambar jika perlu */
+        height: 80px; /* Sesuaikan ukuran gambar jika perlu */
+    }
+
+    .episode-info {
+        width: 100%; /* Membuat info episode mengambil lebar penuh */
+    }
+
+    .episode-info h2 {
+        font-size: 1.3rem; /* Sedikit mengurangi ukuran font judul */
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        flex-wrap: wrap; /* Memungkinkan kontrol untuk pindah ke baris baru jika tidak cukup ruang */
+        justify-content: center; /* Pusatkan kontrol */
+    }
+
+    .controls button,
+    .controls span {
+        margin-bottom: 5px; /* Tambahkan margin bawah antar kontrol jika di-wrap */
+    }
+
+    .controls .waveform {
+        width: 100%; /* Membuat waveform mengambil lebar penuh */
+        margin: 10px 0; /* Tambahkan margin atas dan bawah */
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 15px; /* Mengurangi padding */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .footer-section {
+        min-width: auto; /* Menghapus batasan lebar minimum */
+        margin-bottom: 20px; /* Menambahkan jarak antar bagian footer */
+    }
+
+    .social-icons {
+        justify-content: center; /* Pusatkan ikon sosial */
+    }
+
+    .footer-bottom {
+        margin-top: 15px; /* Sedikit mengurangi margin atas */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Header */
+    header .logo img {
+        width: 60px; /* Lebih memperkecil logo */
+    }
+
+    /* Hero Section */
+    .container.hero-section h1 {
+        font-size: 2.5rem; /* Sedikit mengurangi ukuran font judul */
+    }
+
+    .container.hero-section h2 {
+        font-size: 1.5rem; /* Sedikit mengurangi ukuran font subjudul */
+    }
+
+    /* Galeri Foto di Hero Section */
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr); /* Mengatur menjadi 4 kolom */
+        grid-template-rows: repeat(2, 1fr); /* Mengatur menjadi 2 baris */
+        width: 100%; /* Memastikan grid mengambil lebar penuh container */
+        height: auto; /* Biarkan tinggi menyesuaikan konten */
+        gap: 5px; /* Anda bisa menambahkan sedikit jarak antar foto jika perlu */
+    }
+
+    .photo-item {
+        /* Tidak perlu perubahan khusus, properti yang ada sudah cukup */
+    }
+
+    .photo-item img {
+        /* Properti yang ada sudah memastikan gambar mengisi kotak */
+        object-fit: cover;
+        height: auto; /* Biarkan tinggi gambar menyesuaikan aspek rasio dalam kotak grid */
+    }
+
+    /* Episode Terbaru */
+    .episode-card {
+        width: 100%; /* Membuat setiap kartu mengambil lebar penuh */
+    }
+    .episode-card h3{
+        padding-top: 10px; /* Membuat setiap kartu mengambil lebar penuh */
+    }
+    /* Tentang Section */
+    .about-section h2 {
+        font-size: 1.8rem; /* Sedikit mengurangi ukuran font judul */
+    }
+
+    .about-section .about-image {
+        max-width: 100%; /* Membuat gambar tentang mengambil lebar penuh */
+    }
+    .episode-info h2 {
+        font-size: 1.2rem; /* Lebih mengurangi ukuran font judul jika perlu */
+    }
+
+    .controls button {
+        font-size: 0.9rem; /* Sedikit mengurangi ukuran font tombol kontrol */
+        padding: 5px 10px; /* Sedikit mengurangi padding tombol */
+    }
+}
+
+@media (max-width: 480px) {
+    .container.hero-section h1 {
+        font-size: 2rem; /* Lebih memperkecil ukuran font judul */
+    }
+
+    .container.hero-section h2 {
+        font-size: 1.2rem; /* Lebih memperkecil ukuran font subjudul */
+    }
+
+    .episode-info h2 {
+        font-size: 1rem; /* Lebih memperkecil ukuran font judul */
+    }
+
+    .controls button {
+        font-size: 0.8rem; /* Lebih memperkecil ukuran font tombol kontrol */
+        padding: 5px 8px; /* Lebih memperkecil padding tombol */
+    }
+}
+/* End of CSS */
